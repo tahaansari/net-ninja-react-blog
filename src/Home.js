@@ -10,12 +10,6 @@ const Home = () => {
 
   const { data: posts, isPending, error } = UseFetch("https://jsonplaceholder.typicode.com/posts/");
 
-  const handleDelete = (id) => {
-    // const newData = data.filter((data) => data.id != id);
-    // setData(newData);
-    console.log("handle delete called");
-  };
-
   // const nameChangeHandler = () => {
   //   console.log("name change fired");
   //   setName("name changed");
@@ -25,8 +19,7 @@ const Home = () => {
     <div className="home">
       {error && <div>{error}</div>}
       {isPending && <div>loading...</div>}
-      {posts && <BlogList title="All Blogs" posts={posts} handleDelete={handleDelete}></BlogList>}
-      {/* <button onClick={nameChangeHandler}>change name</button> */}
+      {posts && <BlogList title="All Blogs" posts={posts}></BlogList>}
     </div>
   );
 };
